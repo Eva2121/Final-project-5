@@ -1,0 +1,180 @@
+// Colors
+
+$main_regular_color: #323264;
+$main_alt_color: #46466E;
+$main_soft_color: #686887;
+$black_color: #000000;
+$white_color: #FFFFFF;
+
+$accent_link_color: #F0145A;
+$active_link_regular_color: #24A3FF;
+
+$active_hover_color: #0085FF;
+$active_active_color: #006CCF;
+
+$grey_bg_color: #F5F5FA;
+$grey_bg_alt_color: #EDEDF7;
+$grey_text_color: #B3B3BA;
+$grey_separator_color: #E6E6F0;
+
+$gradient_regular_color: linear-gradient(128.63deg, #323264 0%, #323264 73.96%, #A54B5F 100%);
+$gradient_soft_color: linear-gradient(42.01deg, #323264 14.33%, #323264 51.39%, #7A425E 87.53%);
+$gradient_red_color: linear-gradient(323.35deg, #F0145A 6.7%, #693264 70.36%);
+$gradient_supersoft_color: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+$gradient_red_text_color: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+$gradietn_red_text_reversed_color: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%);
+
+
+// Backgroud color partners
+
+$colors: (
+hillel_color: #1C4280,
+wannabiz_color:#143646,
+tapgerine_color:#F48B30,
+_3dlook_color: #9E4DC3,
+orangear_color:#FD9339,
+adtelligent_color:#E2E2E4,
+clickky_color:#C71C36,
+eco-leasing_color:#DCF3F9,
+infratek_color:#EAEAEA,
+city-park_color:#282240,
+artprint_color:#1D4568,
+ultimatecard_color:#000000,
+);
+
+
+
+// Text
+
+@mixin h1 ($gradient_color,$font-size:38px, $line-height:46px){
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size;
+    line-height: $line-height;
+    background: $gradient_color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@mixin h2($color,$font-size:30px, $line-height:37px) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+
+@mixin h3($color,$font-size:22px,$line-height:27px) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+
+@mixin h3-caps($color,$font-size:14px,$line-height:17px) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color;
+}
+
+@mixin h4 ($color, $font-size:16px, $line-height:20px) {
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+
+@mixin paragraph-big ($color,$font-size:19px, $line-height:158%) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: $line-height; //line-height: 30px;
+    color: $color;
+}
+
+
+@mixin paragraph-regular ($color,$font-size:16px, $line-height:162%) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: $line-height; //line-height: 26px;
+    color: $color;
+}
+
+@mixin paragraph-small($color, $font-size:14px, $line-height:157%) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: $line-height; //line-height: 22px;
+    color: $color;
+}
+
+@mixin unordered-list($color,$font-size:18px, $line-height:144%){
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: $line-height; //line-height: 26px;
+    color: $color
+}
+
+@mixin ordered-list($color,$font-size: 18px, $line-height: 144%) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: $line-height; //line-height: 26px;
+    color: $color;
+}
+
+
+
+// Functions, mixins
+
+@function main-content-width-calc($margin) {
+    @return  calc(100% - $margin);
+}
+
+@mixin main-content-width($margin) {
+    max-width: 1600px;
+    width: main-content-width-calc($margin*2);
+}
+
+@function calc-left-background-logo($width) {
+    @return calc(50% - $width/2);
+}
+
+@mixin background-logo-parameters($width,$height) {
+    width:$width;
+    height:$height;
+    left: calc-left-background-logo($width);
+    background-size: $width $height;
+}
+
+@function calc-top-scroll-svg($background-logo-height) {
+    @return calc($background-logo-height - 30px - 42px);
+}
+
+@function calc-top-background-h1($background-logo-height) {
+    @return calc($background-logo-height/2 - 46px/2);
+}
+
+@function calc-experience-margin-top($background-logo-height,$header-height,$gap) {
+    @return calc($background-logo-height - $header-height + $gap);
+}
+
+
+
+// Margins, gaps
+
+$margin-desctop: 60px;
+$margin-mobile-min: 30px;
+
+$gap-desctop:60px;
+$gap-mobile-min:30px;
+

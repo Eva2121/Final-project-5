@@ -1,0 +1,352 @@
+@import "../_variables";
+
+$background_logo_height-Desktop-HD: 1000px;
+$background_logo_width-Desktop-HD: 872.34px;
+
+$background_logo_height-Desktop-SD: 799px;
+$background_logo_width-Desktop-SD: 697px;
+
+$background_logo_height-Tablet-HD: 768px;
+$background_logo_width-Tablet-HD: 669.96px;
+
+$background_logo_height-Tablet-SD: 1024px;
+$background_logo_width-Tablet-SD: 893.28px;
+
+$background_logo_height-Mobile: 600px;
+$background_logo_width-Mobile: 523.4px;
+
+
+
+
+header .header__logo_main_slash-page-name {
+    display: none;
+}
+
+
+
+.upper_wrapper {
+    &__background_logo {
+        background-image: url("../../images/homepage/Symbol.svg");
+        position: absolute;
+        @include background-logo-parameters($background_logo_width-Desktop-HD,$background_logo_height-Desktop-HD);
+        top: 0px;     
+        
+        @media screen and (max-width:1440px) {
+            @include background-logo-parameters($background_logo_width-Desktop-SD,$background_logo_height-Desktop-SD);
+        }
+
+        @media screen and (max-width:1020px) {
+            @include background-logo-parameters ($background_logo_width-Tablet-HD,$background_logo_height-Tablet-HD);
+        }
+
+        @media screen and (max-width:768px) {
+            @include background-logo-parameters ($background_logo_width-Tablet-SD, $background_logo_height-Tablet-SD);
+            width: 745px;
+        }
+
+        @media screen and (max-width:650px) {
+            @include background-logo-parameters ($background_logo_width-Mobile, $background_logo_height-Mobile);
+            width: 437px;
+        }
+
+
+
+
+        &_scroll_svg {
+            color: $white_color;
+            transition: .2s ease-in;
+            position: absolute;
+            top: calc-top-scroll-svg($background_logo_height-Desktop-HD);
+            left: calc(50% - 42px/2);
+            border-radius: 50%;
+
+            @media screen and (max-width:1440px) {
+                top: calc-top-scroll-svg($background_logo_height-Desktop-SD);
+            }
+
+            @media screen and (max-width:1020px) {
+                top: calc-top-scroll-svg($background_logo_height-Tablet-HD);                
+            }
+
+            @media screen and (max-width:768px) {
+                top: calc-top-scroll-svg($background_logo_height-Tablet-SD);
+            }
+
+            @media screen and (max-width:650px) {
+                top: calc-top-scroll-svg($background_logo_height-Mobile);
+            }
+        }
+
+        &_scroll_svg:hover {
+            color: $accent_link_color;
+            transform: scale(1.2) translateY(21px);
+            box-shadow: 0 0 14px 3px rgba(221, 221, 221, 1);
+        }
+    }
+
+
+
+    &__background_h1 {
+        width: 552px;
+        position: absolute;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 46px;
+        text-align: center;
+        color: $white_color;
+        left: calc(50% - 552px/2);
+        top: calc-top-background-h1($background_logo_height-Desktop-HD);
+
+        @media screen and (max-width:1440px) {
+            top: calc-top-background-h1($background_logo_height-Desktop-SD);
+        }
+        
+        @media screen and (max-width:1020px) {
+            top: calc-top-background-h1($background_logo_height-Tablet-HD);
+        }
+    
+        @media screen and (max-width:768px) {
+            top: calc-top-background-h1($background_logo_height-Tablet-SD);
+        }
+    
+        @media screen and (max-width:650px) {
+            top: calc-top-background-h1($background_logo_height-Mobile);
+            width: 280px;
+            left: calc(50% - 280px/2);
+        }
+    } 
+
+    
+
+    &__experience {
+        margin-top: calc-experience-margin-top($background_logo_height-Desktop-HD, 116px, 60px);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $gap-desctop;
+        max-width: 1360px;
+        width: calc(100% - 240px);
+
+        @media screen and (max-width:1440px) {
+            margin-top: calc-experience-margin-top($background_logo_height-Desktop-SD, 116px, 60px);
+        }
+
+        @media screen and (max-width:1420px) {
+            width: 100%;
+        }
+    
+        @media screen and (max-width:1020px) {
+            margin-top: calc-experience-margin-top($background_logo_height-Tablet-HD, 220px, 60px);
+        }
+
+        @media screen and (max-width:1000px) {
+            flex-direction: column;
+            align-items: unset;
+        }
+    
+        @media screen and (max-width:768px) {
+            margin-top: calc-experience-margin-top($background_logo_height-Tablet-SD, 160px, 60px);
+        }
+    
+        @media screen and (max-width:650px) {
+            margin-top: calc-experience-margin-top($background_logo_height-Mobile, 102px, 30px);
+            gap: $gap-mobile-min;
+        }
+
+
+        &_left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            width: 375px;
+            height: 274px;
+            
+            @media screen and (max-width:1000px) {
+                flex-direction: row;
+                width: calc(100% + $margin-desctop);
+                overflow: hidden;
+                height: 52px;
+                white-space: nowrap;
+                // Как обрабатываются пробельные символы - nowrap - в 1 строку 
+            }
+
+            @media screen and (max-width:650px) {
+                width: calc(100% + $margin-mobile-min);
+            }
+
+            a {
+                width: fit-content;                 
+            }
+            
+
+            h1 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 38px;
+                line-height: 46px;               
+                color: $grey_text_color;
+                transition: .2s ease-in;
+
+                @media screen and (max-width:650px) {
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 37px;
+                }
+            }
+
+            .active {
+                background: $gradietn_red_text_reversed_color;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            &-item:hover h1{
+                color: $accent_link_color;
+            }            
+        }   
+
+
+        &_separator {
+            width: 4px;
+            height: 303px;
+            background: rgba(255, 255, 255, 0.3);
+
+            @media screen and (max-width:1000px) {
+                width: 100%;
+                height: 4px;
+            }
+        }
+
+
+        &_right {
+            display: grid;
+            gap: 30px;
+            max-width: 861px;
+            // Отнимаю от ширины родителя ширину левого блока минус 2 gap и ширина блока с вертикальной чертой
+            width: calc(100% - 375px - 120px - 4px);
+
+            @media screen and (max-width:1000px) {
+                width: 100%;
+            }
+
+            h2 {
+                @include h2($white_color);
+
+                @media screen and (max-width:650px) {
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+
+            p {
+                @include paragraph-big ($white_color);
+            }
+        }
+    }
+}
+
+
+    .main_info__team {
+        display: flex;     
+        height: fit-content;    
+        @include main-content-width($margin-desctop);
+        margin: 0px auto 30px;           
+        background: $grey_bg_color;
+        border-radius: 12px;
+
+        @media screen and (max-width:996px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media screen and (max-width:650px) {
+            @include main-content-width($margin-mobile-min);
+            margin: $margin-mobile-min auto 30px;
+        }
+
+
+        &-img {
+            background-image: url('../../images/homepage/photo-man.png');
+            background-position: center;
+            border-radius: 12px 0px 0px 12px;
+            max-height: 528px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 400px;
+
+            @media screen and (max-width:996px) {
+                border-radius: 12px 12px 0px 0px;
+                width: 100%;
+                height: 500px;
+                max-height: unset;
+            }            
+        }
+
+        &_text {
+            padding: 30px;
+            width: calc(100% - 400px);
+
+            @media screen and (max-width:996px) {
+                width: 100%;
+            }
+
+            @media screen and (max-width:650px) {
+                word-wrap: break-word;
+            }
+
+            h1 {
+                @include h1($gradient_red_text_color);
+                margin-bottom: 30px;
+
+                @media screen and (max-width:650px) {
+                    font-size: 30px;
+                    line-height: 37px;
+                }
+            }
+
+            h4 {
+                @include h4 ($grey_text_color);
+                margin-bottom: 6px;
+            }
+
+            p {
+                @include paragraph-small($grey_text_color);
+            }
+        }
+
+        &_text-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 99px;
+            height: 17px;
+            margin-bottom: 5px;
+        
+            h3 {
+                @include h3-caps($active_link_regular_color);
+                transition: .2s ease-in;
+            }
+    
+            svg {
+                color: $active_link_regular_color;
+                transition: .2s ease-in;
+            }        
+        }
+
+        &_text-link:hover {
+            h3 {
+                color: $accent_link_color;
+                transform: scale(1.1) translateY(-5px) translateX(-5px);
+            }
+
+            svg {
+                color: $accent_link_color;
+                transform: scale(1.1) translateY(-5px) translateX(5px);
+            }
+        }
+    }

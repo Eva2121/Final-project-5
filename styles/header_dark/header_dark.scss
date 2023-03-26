@@ -1,0 +1,16 @@
+@import "../header/header.scss";
+
+@include header("dark",$grey_bg_color, $main_regular_color, $grey_text_color, $active_link_regular_color, $grey_bg_color);
+
+.header-wrapper {
+    max-width: 1600px;
+    width: calc(100vw - $margin-desctop*2);
+
+    @media screen and (max-width:650px) {
+        padding: 10px 0px 0px 0px;
+        width: calc(100% - $margin-mobile-min);
+    }
+}
+
+
+
